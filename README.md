@@ -29,4 +29,8 @@ The inline `style` attribute is included because there is no reason for the **he
 
 The inline `onload` javascript event listener is the workhorse of the **HTML Import SHIM**, which, once the element has loaded, extracts the contents of the element, adds that content to the DOM of the viewport document and then removes the **helper element** from the DOM of the viewport document.
 
-The *third* attribute (which is `data` if you're deploying `<object>` as a **helper element** and `src` if you're deploying `<iframe>`) has a value which *may* (but doesn't have to) change whenever the **HTML Import SHIM** is deployed and which points to the external HTML file, the contents of which will be imported into the viewport document. 
+The *third* attribute (which is `data` if you're deploying `<object>` as a **helper element** and `src` if you're deploying `<iframe>`) has a value which *may* (but doesn't have to) change whenever the **HTML Import SHIM** is deployed and which points to the external HTML file, the contents of which will be imported into the viewport document.
+
+_____
+
+## Additional Note

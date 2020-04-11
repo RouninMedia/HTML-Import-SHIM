@@ -22,5 +22,11 @@ Here is an example of both elements in action as **HTML Import SHIM helper eleme
 ```
 We can see that each **helper element** has *3 attributes*, the last 2 of which are ***always the same***, whenever the **HTML Import SHIM** is deployed:
 
- - `style="display: none;"` <= Because there is no reason for the helper element to ever display in the viewport
- - `onload="this.before(this.contentDocument.body.children[0]); this.remove();"` <= 
+ - `style="display: none;"`
+ - `onload="this.before(this.contentDocument.body.children[0]); this.remove();"`
+
+The inline `style` attribute is included because there is no reason for the **helper element** to ever display in the viewport.
+
+The inline `onload` javascript event listener is the workhorse of the **HTML Import SHIM**, which, once the element has loaded, extracts the contents of the element, adds that content to the DOM of the viewport document and then removes the **helper element** from the DOM of the viewport document.
+
+The *third* attribute (which is `data` if you're deploying `<object>` as a **helper element** and `src` if you're deploying `<iframe>`) has a value which *may* (but doesn't have to) change whenever the **HTML Import SHIM** is deployed and which points to the external HTML file, the contents of which will be imported into the viewport document. 

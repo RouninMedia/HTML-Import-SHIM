@@ -80,41 +80,32 @@ Although the  **HTML Import SHIM** is intended primarily to import *HTML*, it wi
 The key difference when importing anything that isn't an HTML document is that we should use
 
 ```
-this.contentDocument.children[0] // instead of this.contentDocument.body.children[0]
+this.contentDocument.children[0]
 ```
+
+instead of `this.contentDocument.body.children[0]`.
 
 **e.g.**
 
-Scalable Vector Graphics (SVG):
+### Scalable Vector Graphics (SVG):
 
 ```
 <object data="/my-svg-import-1.svg" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></object>
-```
-or
 
-```
 <iframe src="/my-svg-import-2.svg" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></iframe>
 ```
 
-JSON:
+### JSON:
 
 ```
 <object data="/my-json-import-1.json" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></object>
-```
 
-or
-
-```
 <iframe src="/my-json-import-2.json" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></iframe>
 ```
 
-Plaintext:
+### Plaintext:
 ```
 <object data="/my-txt-import-1.txt" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></object>
-```
 
-or
-
-```
 <iframe src="/my-txt-import-2.txt" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></iframe>
 ```

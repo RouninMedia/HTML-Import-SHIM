@@ -35,7 +35,9 @@ _____
 
 ## Additional Note
 
-The walkthrough above constructs helper elements with an inline style attribute and an inline event listener attribute. But if we need to separate structure from presentation from behaviour, we can straightforwardly convert the self-contained element(s) above into a setup implementing unobtrusive CSS and Javascript:
+Although the **HTML Import SHIM** is intended primarily to be deployed as a single, self-contained, declarative element, we may of course, present it alternatively without inlined `style` and `onload` attributes, adhering to a **Separation of Concerns** approach.
+
+If we need to separate structure from presentation from behaviour, we can straightforwardly convert the self-contained declarative element(s) above into an Unobtrusive CSS and Javascript setup, involving three separated files (*HTML*, *CSS* and *JS*):
 
 ### HTML:
 

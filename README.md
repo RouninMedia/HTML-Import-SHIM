@@ -34,3 +34,38 @@ The *third* attribute (which is `data` if you're deploying `<object>` as a **hel
 _____
 
 ## Additional Note
+
+The walkthrough above constructs helper elements with an inline style attribute and an inline event listener attribute. But if we need to separate structure from presentation from behaviour, we can straightforwardly convert the self-contained element(s) above into a setup implementing unobtrusive CSS and Javascript:
+
+###HTML:
+
+```
+<object class="html-import-helper" data="/my-html-import.html"></object>
+```
+
+or
+
+```
+<iframe class="html-import-helper" src="/my-html-import.html"></iframe>
+```
+
+###CSS:
+
+```
+.html-import-helper {
+  display: none;
+}
+```
+
+###Javascript:
+
+```
+const htmlImportHelper = document.getElementsByClassName('html-import-helper')[0];
+
+const importHTML = (e) => {
+  e.target.before(e.target.contentDocument.body.children[0]);
+  e.target.remove();
+}
+
+htmlImportHelper.addEventListener('load', importHTML);
+```

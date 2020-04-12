@@ -35,7 +35,7 @@ _____
 
 ## Additional Note
 
-Although the **HTML Import SHIM** is intended primarily to be deployed as a single, self-contained, declarative element, we may of course, present it alternatively without inlined `style` and `onload` attributes, adhering to a **Separation of Concerns** approach.
+Although the **HTML Import SHIM** is intended primarily to be deployed as a single, self-contained, declarative element, we may of course, present it alternatively *without* inlined `style` and `onload` attributes, adhering instead to a **Separation of Concerns** approach.
 
 If we need to separate *structure* from *presentation* from *behaviour*, we can straightforwardly convert the self-contained declarative element(s) above into an Unobtrusive CSS and Javascript setup, involving three separated files (*HTML*, *CSS* and *JS*):
 

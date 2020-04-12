@@ -75,7 +75,7 @@ _____
 
 ## Appendix II : Importing SVG / JSON / Plaintext
 
-Although the  **HTML Import SHIM** is intended primarily to import *HTML*, it will also, just as capably, import *SVG*. *JSON* and *Plaintext*.
+Although the  **HTML Import SHIM** is intended primarily to import `.html` files, it will just as capably, import `.svg`, `.json` and `.txt` (plaintext) files.
 
 The key difference when importing anything that isn't an HTML document is that we should use
 

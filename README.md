@@ -33,7 +33,7 @@ The *third* attribute (which is `data` if you're deploying `<object>` as a **hel
 
 _____
 
-## Additional Note
+## Appendix I : Separation of Concerns
 
 Although the **HTML Import SHIM** is intended primarily to be deployed as a single, self-contained, declarative element, we may of course, present it alternatively *without* inlined `style` and `onload` attributes, adhering instead to a **Separation of Concerns** approach.
 
@@ -70,4 +70,51 @@ const importHTML = (e) => {
 }
 
 htmlImportHelper.addEventListener('load', importHTML);
+```
+_____
+
+## Appendix II : Importing SVG / JSON / Plaintext
+
+Although the  **HTML Import SHIM** is intended primarily to import *HTML*, it will also, just as capably, import *SVG*. *JSON* and *Plaintext*.
+
+The key difference when importing anything that isn't an HTML document is that we should use
+
+```
+this.contentDocument.children[0] // instead of this.contentDocument.body.children[0]
+```
+
+**e.g.**
+
+Scalable Vector Graphics (SVG):
+
+```
+<object data="/my-svg-import-1.svg" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></object>
+```
+or
+
+```
+<iframe src="/my-svg-import-2.svg" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></iframe>
+```
+
+JSON:
+
+```
+<object data="/my-json-import-1.json" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></object>
+```
+
+or
+
+```
+<iframe src="/my-json-import-2.json" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></iframe>
+```
+
+Plaintext:
+```
+<object data="/my-txt-import-1.txt" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></object>
+```
+
+or
+
+```
+<iframe src="/my-txt-import-2.txt" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></iframe>
 ```

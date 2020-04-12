@@ -77,13 +77,11 @@ _____
 
 Although the  **HTML Import SHIM** is intended primarily to import `.html` files, it will just as capably, import `.svg`, `.json` and `.txt` (plaintext) files.
 
-The key difference when importing anything that isn't an HTML document is that we should use
+The key difference when importing anything that isn't an HTML document is that instead of `this.contentDocument.body.children[0]`, we should use:
 
 ```
 this.contentDocument.children[0]
 ```
-
-instead of `this.contentDocument.body.children[0]`.
 
 **e.g.**
 

@@ -1,8 +1,10 @@
-const htmlImportHelper = document.getElementsByClassName('html-import-helper')[0];
+const htmlImportHelpers = [... document.getElementsByClassName('html-import-helper')];
 
 const importHTML = (e) => {
   e.target.before(e.target.contentDocument.body.children[0]);
   e.target.remove();
 }
 
-htmlImportHelper.addEventListener('load', importHTML);
+for (htmlImportHelper of htmlImportHelpers) {
+  htmlImportHelper.addEventListener('load', importHTML);
+}

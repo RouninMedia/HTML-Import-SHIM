@@ -20,7 +20,7 @@ Here is an example of both elements in action as **HTML Import SHIM helper eleme
 <iframe src="/my-html-import-2.html" style="display: none;" onload="this.before(this.contentDocument.body.children[0]); this.remove();"></iframe>
  
 ```
-We can see that each **helper element** has *3 attributes*, the last 2 of which are ***always the same***, whenever the **HTML Import SHIM** is deployed:
+Each **helper element** has *3 attributes*, the last 2 of which are ***always the same***, whenever the **HTML Import SHIM** is deployed:
 
  - `style="display: none;"`
  - `onload="this.before(this.contentDocument.body.children[0]); this.remove();"`

@@ -107,3 +107,9 @@ this.contentDocument.children[0]
 
 <iframe src="/my-txt-import-2.txt" style="display: none;" onload="this.before(this.contentDocument.children[0]); this.remove();"></iframe>
 ```
+
+________
+
+## Alternative ideas
+
+ - `<load-html>` - https://g14n.info/load-html/
